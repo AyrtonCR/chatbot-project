@@ -102,9 +102,50 @@ describe("getBotReply", () => {
     expect(botReply2).toEqual(expectedReply2);
 
     const botReply3 = getBotReply("no");
-    const expectedReply3 = "Well then John Key, you must suck.";
+    const expectedReply3 = ["Well then John Key, you must suck."];
 
     // Uncomment the following line and update your expectation
     expect(botReply3).toEqual(expectedReply3);
+  });
+
+  it("should do a greeting asking for your name, then ask if board has good grip, say it is, then ask if your catching good waves, then restart when input is directed, then do initial greeting, offer same name as before, say board is not grippy this time, say water is warm and be offered warm water wax", () => {
+    const botReply1 = getBotReply("The Restarter");
+    const expectedReply1 = [
+      "Nice to meet you The Restarter, lets start with a few questions to help me give the best advice. Firstly, does your surfboard maintain good grip?",
+    ];
+
+    // Uncomment the following line and update your expectation
+    expect(botReply1).toEqual(expectedReply1);
+
+    const botReply2 = getBotReply("yes");
+    const expectedReply2 = [
+      "Ok The Restarter, thats good to hear your board has enough grip. Are you catching lots of good waves?",
+    ];
+
+    expect(botReply2).toEqual(expectedReply2);
+
+    const botReply3 = getBotReply("restart");
+    const expectedReply3 =
+      "Hi there, I am surfbot here to help you choose the right surf wax for your board so you can get back in the water and catch some epic waves, what is your name?";
+    // Uncomment the following line and update your expectation
+    expect(botReply3).toEqual(expectedReply3);
+
+    const botReply4 = getBotReply("The Restarter");
+    const expectedReply4 = [
+      "Nice to meet you The Restarter, lets start with a few questions to help me give the best advice. Firstly, does your surfboard maintain good grip?",
+    ];
+    expect(botReply4).toEqual(expectedReply4);
+
+    const botReply5 = getBotReply("no");
+    const expectedReply5 = [
+      "Well The Restarter, Give your board a wax! So I know the right board wax to reccommend I need to know is the water temperature where you live warm (15°C and above), or cold (14°C and below?)",
+    ];
+    expect(botReply5).toEqual(expectedReply5);
+
+    const botReply6 = getBotReply("warm");
+    const expectedReply6 = [
+      "Ok The Restarter, I would reccommend you use xxx tropical surf wax",
+    ];
+    expect(botReply6).toEqual(expectedReply6);
   });
 });

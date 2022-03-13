@@ -9,9 +9,32 @@ let level = 0;
 let path = 0;
 // path 0 is yes, path 1 is no //
 
+const affirmativeReplies = ["yes", "ya", "ye", "yee", "yep", "yeah", "y"];
+const negativeReplies = ["no", "nah", "na", "n", "nope", "negative"];
+const warmReplies = ["warm", "hot", "roasting"];
+const coldReplies = ["cold", "freezing", "chilly"];
+
+const tellJoke = [
+  "What did the German animal doctor wear when he went surfing? A Vetsuit",
+];
+
 const getBotReply = (msg) => {
   console.log(level);
   console.log(path);
+  const lowerCaseUserInput = msg.toLowerCase();
+
+  if (lowerCaseUserInput === "joke") {
+    level = 8;
+    path = 0;
+    return tellJoke;
+  }
+
+  if (msg === "restart") {
+    level = 0;
+    path = 0;
+    rememberedName = undefined;
+    return "Hi there, I am surfbot here to help you choose the right surf wax for your board so you can get back in the water and catch some epic waves, what is your name?";
+  }
 
   if (level === 0 && rememberedName === undefined) {
     rememberedName = msg;
@@ -24,7 +47,7 @@ const getBotReply = (msg) => {
   }
 
   if (level === 1) {
-    if (msg === "no") {
+    if (negativeReplies.includes(lowerCaseUserInput)) {
       level = 2;
       path = 1;
       return [
@@ -32,7 +55,7 @@ const getBotReply = (msg) => {
           rememberedName +
           ", Give your board a wax! So I know the right board wax to reccommend I need to know is the water temperature where you live warm (15°C and above), or cold (14°C and below?)",
       ];
-    } else if (msg === "yes") {
+    } else if (affirmativeReplies.includes(lowerCaseUserInput)) {
       level = 2;
       path = 0;
       return [
@@ -43,7 +66,7 @@ const getBotReply = (msg) => {
     }
   }
   if (level === 2 && path === 1) {
-    if (msg === "cold") {
+    if (coldReplies.includes(lowerCaseUserInput)) {
       level = 3;
       return [
         "Ok " +
@@ -51,7 +74,7 @@ const getBotReply = (msg) => {
           ", I would reccommend you use ccc cold water surf wax",
       ];
     } else if (level === 2 && path === 1) {
-      if (msg === "warm") {
+      if (warmReplies.includes(lowerCaseUserInput)) {
         level = 3;
         return [
           "Ok " +
@@ -63,13 +86,15 @@ const getBotReply = (msg) => {
   }
 
   if (level === 2 && path === 0) {
-    if (msg === "yes") {
+    if (affirmativeReplies.includes(lowerCaseUserInput)) {
       level = 3;
       return "Well you dont need to wax your board you bloody surfin turfin legend";
-    } else if (msg === "no") {
+    } else if (negativeReplies.includes(lowerCaseUserInput)) {
       level = 3;
-      return "Well then John Key, you must suck.";
+      return ["Well then " + rememberedName + ", you must suck."];
     }
   }
+
+  return "Plese answer with either yes, no, warm or cold, or type restart to start over";
 };
 export { getBotReply };
