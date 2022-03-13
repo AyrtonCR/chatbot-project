@@ -15,7 +15,7 @@ const warmReplies = ["warm", "hot", "roasting"];
 const coldReplies = ["cold", "freezing", "chilly"];
 
 const tellJoke = [
-  "What did the German animal doctor wear when he went surfing? A Vetsuit",
+  "What did the German animal doctor wear when he went surfing?           \n\n\n\n\n A Vetsuit",
 ];
 
 const getBotReply = (msg) => {

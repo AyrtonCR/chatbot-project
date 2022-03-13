@@ -1,9 +1,21 @@
 body {
   padding: 0;
   margin: 0;
+  background-color: rgb(189, 188, 188);
+}
+
+.surf-img {
+  max-width: 90%;
+  height: 0, auto;
+  margin-top: 7rem;
+  margin-bottom: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border-radius: 0.9rem;
 }
 
 .chatbot-interface {
+  text-align: center;
   display: flex;
   flex-direction: column;
   margin-top: 1vh;
@@ -22,6 +34,7 @@ body {
 
 .chat-container {
   margin-top: 2vh;
+  margin-bottom: 2rem;
   display: flex;
   /* flex-direction: column; */
   justify-content: center;
@@ -33,11 +46,14 @@ body {
 
 .chat-input {
   width: 40vw;
+  border-radius: 0.4rem;
   font-size: 1.5em;
 }
 
 .btn-chat-send {
   width: 10vw;
+  border-radius: 1rem;
+  margin-left: 1rem;
   font-size: 1.5em;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -52,6 +68,7 @@ body {
 .chatbox {
   width: 50vw;
   max-height: 30vh;
+  border-radius: 1rem;
   border: 1px solid gray;
   display: flex;
   flex-direction: column;
@@ -66,10 +83,15 @@ body {
 }
 
 .chat-item-user {
-  font-family: "Roboto", sans-serif;
+  font-family: "Play", sans-serif;
+  font-size: 1.5rem;
+  line-height: 6.2rem;
+  text-align: left;
 }
 
 .chat-item-bot {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Play", monospace;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
   text-align: right;
 }
