@@ -15,7 +15,7 @@ const warmReplies = ["warm", "hot", "roasting"];
 const coldReplies = ["cold", "freezing", "chilly"];
 
 const tellJoke = [
-  "What did the German animal doctor wear when he went surfing?           \n\n\n\n\n A Vetsuit",
+  "What did the German animal doctor wear when he went surfing? A Vetsuit",
 ];
 
 const getBotReply = (msg) => {
@@ -24,8 +24,6 @@ const getBotReply = (msg) => {
   const lowerCaseUserInput = msg.toLowerCase();
 
   if (lowerCaseUserInput === "joke") {
-    level = 8;
-    path = 0;
     return tellJoke;
   }
 
@@ -39,48 +37,28 @@ const getBotReply = (msg) => {
   if (level === 0 && rememberedName === undefined) {
     rememberedName = msg;
     level = 1;
-    return [
-      "Nice to meet you " +
-        rememberedName +
-        ", lets start with a few questions to help me give the best advice. Firstly, does your surfboard maintain good grip?",
-    ];
+    return `Nice to meet you ${rememberedName}, lets start with a few questions to help me give the best advice. Firstly, does your surfboard maintain good grip?`;
   }
 
   if (level === 1) {
     if (negativeReplies.includes(lowerCaseUserInput)) {
       level = 2;
       path = 1;
-      return [
-        "Well " +
-          rememberedName +
-          ", Give your board a wax! So I know the right board wax to reccommend I need to know is the water temperature where you live warm (15°C and above), or cold (14°C and below?)",
-      ];
+      return `Well ${rememberedName}, Give your board a wax! So I know the right board wax to reccommend I need to know is the water temperature where you live warm (15°C and above), or cold (14°C and below?)`;
     } else if (affirmativeReplies.includes(lowerCaseUserInput)) {
       level = 2;
       path = 0;
-      return [
-        "Ok " +
-          rememberedName +
-          ", thats good to hear your board has enough grip. Are you catching lots of good waves?",
-      ];
+      return `Ok ${rememberedName}, thats good to hear your board has enough grip. Are you catching lots of good waves?`;
     }
   }
   if (level === 2 && path === 1) {
     if (coldReplies.includes(lowerCaseUserInput)) {
       level = 3;
-      return [
-        "Ok " +
-          rememberedName +
-          ", I would reccommend you use ccc cold water surf wax",
-      ];
+      return `Ok ${rememberedName}, I would reccommend you use ccc cold water surf wax`;
     } else if (level === 2 && path === 1) {
       if (warmReplies.includes(lowerCaseUserInput)) {
         level = 3;
-        return [
-          "Ok " +
-            rememberedName +
-            ", I would reccommend you use xxx tropical surf wax",
-        ];
+        return `Ok ${rememberedName}, I would reccommend you use xxx tropical surf wax`;
       }
     }
   }
@@ -91,7 +69,7 @@ const getBotReply = (msg) => {
       return "Well you dont need to wax your board you bloody surfin turfin legend";
     } else if (negativeReplies.includes(lowerCaseUserInput)) {
       level = 3;
-      return ["Well then " + rememberedName + ", you must suck."];
+      return `Well then ${rememberedName}, you must suck.`;
     }
   }
 
