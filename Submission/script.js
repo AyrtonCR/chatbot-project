@@ -17,6 +17,11 @@ const coldReplies = ["cold", "freezing", "chilly"];
 const tellJoke = [
   "What did the German animal doctor wear when he went surfing? A Vetsuit",
 ];
+const helpInfo = [
+  "The purpose of this bot is to help you choose the right surf wax for your surfboard.<br> If you do not own a surfboard dont worry! You can steal one off someones roof at the beach. <br><br>The answers you can input are 'yes', 'no', 'warm', 'cold', 'joke', and 'help' if you get lost.",
+];
+
+const rippingInfo = ["https://www.youtube.com/watch?v=-ilFR_rI_ow"];
 
 const getBotReply = (msg) => {
   console.log(level);
@@ -27,11 +32,19 @@ const getBotReply = (msg) => {
     return tellJoke;
   }
 
+  if (lowerCaseUserInput === "help") {
+    return helpInfo;
+  }
+
+  if (lowerCaseUserInput === "ripping") {
+    return rippingInfo;
+  }
+
   if (msg === "restart") {
     level = 0;
     path = 0;
     rememberedName = undefined;
-    return "Hi there, I am surfbot here to help you choose the right surf wax for your board so you can get back in the water and catch some epic waves, what is your name?";
+    return "Hi there, I am surfbot here to help you choose the right surf wax for your board so you can get back in the water and catch some epic waves.<br> What is your name?";
   }
 
   if (level === 0 && rememberedName === undefined) {
