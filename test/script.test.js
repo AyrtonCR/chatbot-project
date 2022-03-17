@@ -102,7 +102,7 @@ describe("getBotReply", () => {
 
     const botReply3 = getBotReply("restart");
     const expectedReply3 =
-      "Hi there, I am surfbot here to help you choose the right surf wax for your board so you can get back in the water and catch some epic waves.<br> What is your name?";
+      "Hi there, I am surfbot here to help you choose the right surf wax for your board so you can get back in the water and catch some epic waves.<br><br> What is your name?";
     // Uncomment the following line and update your expectation
     expect(botReply3).toEqual(expectedReply3);
 
