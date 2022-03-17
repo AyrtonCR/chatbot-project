@@ -107,9 +107,9 @@ body {
   margin-top: 2rem;
   margin-bottom: 5rem;
   line-height: 2.1rem;
-  width: 15vw;
+  min-width: 10vw;
   text-align: left;
-  height: 11.9rem;
+  height: auto;
   border-radius: 1rem;
   border: 1px solid gray;
   display: flex;

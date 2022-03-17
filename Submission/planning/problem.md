@@ -10,7 +10,7 @@ Create a chatbot that will help surfers determine if they need to wax their boar
 
 <br>
 
-## "Hi there, I am surfbot here to help you choose the right surf wax for your board so you can get back in the water and catch some epic waves, what is your name ?
+### "Hi there, I am surfbot here to help you choose the right surf wax for your board so you can get back in the water and catch some epic waves, what is your name ?
 
 <br>
 
@@ -22,7 +22,7 @@ Create a chatbot that will help surfers determine if they need to wax their boar
 
 <br>
 
-## "Nice to meet you "name", lets start with a few questions to help me give the best advice. Firstly, does your surfboard maintain good grip?"
+### "Nice to meet you "name", lets start with a few questions to help me give the best advice. Firstly, does your surfboard maintain good grip?"
 
 <br>
 
@@ -35,7 +35,7 @@ Create a chatbot that will help surfers determine if they need to wax their boar
 
 <br>
 
-## "Ok "name", thats good to hear your board has enough grip. Are you catching lots of good waves?"
+### "Ok "name", thats good to hear your board has enough grip. Are you catching lots of good waves?"
 
   <br>
 
@@ -43,7 +43,7 @@ Create a chatbot that will help surfers determine if they need to wax their boar
 
 <br>
 
-## "Well "name", Give your board a wax! So I know the right board wax to reccommend I need to know is the water temperature where you live warm (15°C and above), or cold (14°C and below?)".
+### "Well "name", Give your board a wax! So I know the right board wax to reccommend I need to know is the water temperature where you live warm (15°C and above), or cold (14°C and below?)".
 
 <br>
 <br>
@@ -55,7 +55,7 @@ Create a chatbot that will help surfers determine if they need to wax their boar
 <br>
 <br>
 
-## "Ok "name", thats good to hear your board has enough grip. Are you catching lots of good waves?"
+### "Ok "name", thats good to hear your board has enough grip. Are you catching lots of good waves?"
 
  <br>
 
@@ -68,13 +68,13 @@ Create a chatbot that will help surfers determine if they need to wax their boar
 
     Outputs = if yes respond ...
 
-## "Well you dont need to wax yours board you bloody surfin turfin legend"
+### "Well you dont need to wax yours board you bloody surfin turfin legend"
 
   <br>
 
               if no respond ...
 
-## "Well then "name", you must suck."
+### "Well then "name", you must suck."
 
 <br>
 <br>
@@ -86,7 +86,7 @@ Create a chatbot that will help surfers determine if they need to wax their boar
 <br>
 <br>
 
-## "Well "name", Give your board a wax! So I know the right board wax to reccommend I need to know is the water temperature where you live warm (15°C and above), or cold (14°C and below?)".
+### "Well "name", Give your board a wax! So I know the right board wax to reccommend I need to know is the water temperature where you live warm (15°C and above), or cold (14°C and below?)".
 
   <br>
 
@@ -101,7 +101,7 @@ Create a chatbot that will help surfers determine if they need to wax their boar
 
 <br>
 
-## "Ok "name, I would reccommend you use xxx tropical surf wax"
+### "Ok "name, I would reccommend you use xxx tropical surf wax"
 
  <br>
 
@@ -109,7 +109,7 @@ Create a chatbot that will help surfers determine if they need to wax their boar
 
 <br>
 
-## "Ok "name, I would reccommend you use ccc cold water surf wax"
+### "Ok "name, I would reccommend you use ccc cold water surf wax"
 
 ---
 
